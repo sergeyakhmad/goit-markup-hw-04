@@ -141,7 +141,8 @@ body {
 }
 
 .contact-nav .link {
-  display: block;
+  display: inline-flex;
+  align-items: center;
   padding-top: 32px;
   padding-bottom: 32px;
 
@@ -155,11 +156,24 @@ body {
   color: var(--accent-color);
 }
 
+.contact-nav .icon {
+  margin-right: 10px;
+  fill: currentColor;
+}
+
 /* main */
 
 /* Герой */
 
 .hero {
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  background-image: linear-gradient(rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)),
+    url(../images/Img.jpg);
+  background-position: center;
+  background-size: cover;
+
   text-align: center;
   padding-top: 200px;
   padding-bottom: 200px;
@@ -198,11 +212,6 @@ body {
   cursor: pointer;
 }
 
-/* .btn:hover,
-.btn:focus {
-  color: var(--primary-text-color);
-} */
-
 /* Особенности */
 
 .feature {
@@ -220,6 +229,20 @@ body {
 
 .feature-list .item:not(:last-child) {
   margin-right: 30px;
+}
+
+.feature-picture {
+  display: flex;
+  /* width: 270px;
+  height: 120px; */
+  min-height: 120px;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 30px;
+
+  background-color: var(--secondary-bg-color);
+  border-radius: 4px;
 }
 
 .feature-subtitle {
@@ -249,7 +272,8 @@ body {
 }
 
 .service-title,
-.team-title {
+.team-title,
+.clients-title {
   text-align: center;
   margin-bottom: 50px;
 
@@ -281,6 +305,7 @@ body {
 }
 
 .team-card {
+  margin: 0 auto;
   padding-top: 30px;
   padding-bottom: 30px;
 }
@@ -292,9 +317,77 @@ body {
 }
 
 .team-text {
+  margin-bottom: 16px;
+
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 1.19;
+}
+
+.team-social-networks {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-social-networks-item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.team-social-networks-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  color: #afb1b8;
+}
+
+.team-social-networks-link:hover,
+.team-social-networks-link:focus {
+  color: var(--primary-white-color);
+  background-color: var(--accent-color);
+}
+
+.team-social-networks .icon {
+  fill: currentColor;
+}
+
+/* Постоянные клиенты */
+
+.clients-list {
+  display: flex;
+  justify-content: center;
+}
+
+.clients-list .item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.clients-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 168px;
+  height: 90px;
+
+  color: #afb1b8;
+  border: 1px solid #afb1b8;
+  border-radius: 4px;
+
+  transition: color 250ms var(--cubic), border 250ms var(--cubic);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+  color: var(--accent-color);
+  border: 1px solid var(--accent-color);
+}
+
+.clients-icon {
+  fill: currentColor;
 }
 
 /* Футер */
@@ -303,6 +396,15 @@ body {
   padding-bottom: 60px;
 
   background-color: var(--hero-bg-color);
+}
+
+.flex-footer {
+  display: flex;
+  align-items: baseline;
+}
+
+.contacts-footer {
+  margin-right: 70px;
 }
 
 .footer-logo {
@@ -332,6 +434,43 @@ body {
 .footer .link:hover,
 .footer .link:focus {
   color: var(--accent-color);
+}
+
+/* Invitation */
+
+.invitation-text {
+  display: block;
+  margin-bottom: 20px;
+
+  color: var(--primary-white-color);
+  text-transform: uppercase;
+}
+
+.invitation-list {
+  display: flex;
+}
+
+.invitation-list .item:not(:last-child) {
+  margin-right: 10px;
+}
+
+.invitation-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.invitation-link:hover,
+.invitation-link:focus {
+  background-color: var(--accent-color);
+}
+
+.invitation-icon {
+  fill: var(--primary-white-color);
 }
 
 /* Портфолио */
@@ -367,8 +506,10 @@ body {
 
 .portfolio-btn:hover,
 .portfolio-btn:focus {
-  background-color: var(--accent-color);
   color: var(--primary-white-color);
+  background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Примеры работ */
@@ -410,4 +551,9 @@ body {
   color: var(--secondary-text-color);
   font-size: 16px;
   line-height: 1.87;
+}
+
+.examples .item:hover {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
